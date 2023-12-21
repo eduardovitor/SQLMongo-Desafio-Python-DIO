@@ -17,7 +17,10 @@ class Cliente(Base):
     endereco = Column(String(9))
 
     def __repr__(self):
-        return f'Cliente: \n Nome: {self.nome} \n Endereco: {self.endereco}'
+        return f"""Cliente:
+        Nome: {self.nome}
+        Endereco: {self.endereco}
+        ID: {self.id}"""
 
 
 class Conta(Base):
@@ -34,7 +37,9 @@ class Conta(Base):
         return f"""Conta:
         Tipo: {self.tipo}
         Agência: {self.agencia}
-        Número: {self.num}"""
+        Número: {self.num}
+        ID do cliente: {self.id_cliente}
+        """
 
 
 Base.metadata.create_all(engine)
